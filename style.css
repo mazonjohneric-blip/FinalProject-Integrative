@@ -1,9 +1,9 @@
 /* Reset */
 * {
-    margin: 0;
+    margin: 10;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Background */
@@ -12,14 +12,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #a2c5f8, #9bb2db);
 }
 
 /* Container */
 .container {
-    background: white;
+    background: rgb(84, 255, 161);
     padding: 30px;
-    width: 320px;
+    width: 550px;
+    height: 325px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     text-align: center;
@@ -29,6 +30,7 @@ body {
 .container h1 {
     margin-bottom: 20px;
     color: #333;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Labels */
@@ -41,35 +43,29 @@ body {
     font-size: 14px;
 }
 
-/* Inputs */
+/* Container spacing */
+.container {
+    padding: 40px 30px; /* more space inside */
+}
+
+/* Inputs spacing */
 .container input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    margin-bottom: 30px; /* space between username & password */
     border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: 0.3s;
+    border: 1px solid #000000;
 }
 
-.container input:focus {
-    border-color: #2575fc;
-    box-shadow: 0 0 5px rgba(37,117,252,0.3);
-}
-
-/* Button */
+/* Button spacing */
 .register {
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px; /* space below button */
     padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #2575fc;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.register:hover {
-    background: #1a5edb;
+/* Login text spacing */
+.login-text {
+    margin-top: 10px;
+    font-size: 14px;
 }
