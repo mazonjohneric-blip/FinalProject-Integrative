@@ -26,6 +26,8 @@
 
                 <textarea id="description" class="form-control mb-3" placeholder="Description"></textarea>
 
+                <input type="text" name="image" placeholder="Enter image URL" required>
+
                 <div class="text-end">
                     <button class="btn btn-success px-4">Add Product</button>
                 </div>
