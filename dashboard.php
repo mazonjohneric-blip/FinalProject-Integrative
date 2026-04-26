@@ -6,7 +6,9 @@
 </head>
 
 <body>
-
+ <div class="nav-links">
+    <a href="user.php">✌️</a>
+</div>
 <div class="container py-5">
 
     <!-- TITLE -->

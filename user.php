@@ -34,19 +34,111 @@ if (isset($_GET['buy'])) {
 ?>
 
 <div class="navbar">
-  <h1 class="logo">MyShop</h1>
 
-  <div class="nav-links">
-    <a href="user.php">Home</a>
-    <a href="about.php">About</a>
-    <a href="transaction.php">Transaction Process</a>
+    <!-- LEFT -->
+    <h1 class="logo">MyShop</h1>
+
+    <!-- CENTER -->
+    <div class="center-home">
+        <a href="user.php">HOME</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-section">
+
+        <!-- DROPDOWN BUTTON -->
+        <div class="menu-box">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+            <ul id="menu" class="hidden">
+                <li><a href="about.php">About</a></li>
+                <li><a href="mypurchases.php">Purchases</a></li>
+            </ul>
+        </div>
+
+        <!-- SEARCH -->
+        <form action="search.php" method="GET">
+            <input type="text" name="query" placeholder="Search item...">
+            <button type="submit">Search</button>
+        </form>
+
+    </div>
+
 </div>
-<form action="search.php" method="GET">
-    <input type="text" name="query" placeholder="Search item...">
-    <button type="submit">Search</button>
-</form>
+  <style>
+    .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
 
+/* CENTER HOME */
+.center-home {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.center-home a {
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+/* RIGHT SIDE */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* MENU BUTTON (LAKI FIX) */
+.menu-btn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+.menu-box {
+    position: relative;
+}
+
+#menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: #a093d2;
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu li {
+    padding: 5px 10px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* HIDE */
+.hidden {
+    display: none;
+}
+               
+  </style>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("hidden");
+}
+</script>
+</div>
   <!-- Cart -->
   <div class="cart-container">
 
@@ -194,7 +286,7 @@ function toggleCart() {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Products</title>
+<title>PRODUCTS</title>
 
 <style>
 body {
@@ -205,7 +297,7 @@ body {
 
 h2 {
     margin-bottom: 20px;
-    color: #eafbff;
+    color: #8dcee2;
     text-align: center;
     font-size: 50px;
 }
