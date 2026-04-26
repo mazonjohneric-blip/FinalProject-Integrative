@@ -55,37 +55,80 @@ $current_step = rand(1, count($steps));
 </head>
 <body>
 
-<div class="card">
-    <img src="<?php echo $row['image']; ?>">
-    <h2><?php echo $row['product_name']; ?></h2>
-    <p class="price">₱<?php echo $row['price']; ?></p>
+<body>
 
-    <p>Description: <?php echo $row['description'] ?? 'No description available'; ?></p>
+<h2 style="text-align:center; color:#7dd3fc;">Order Status</h2>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+}
+
+/* CARD */
+.status-card {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #e5e7eb;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* TABLE */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.status-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* STATUS BADGE */
+.badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.completed { background: green; }
+.pending { background: orange; }
+
+/* BACK BUTTON */
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+</style>
+
+<div class="status-card">
+
+    <table class="status-table">
+        <?php for ($i = 0; $i < count($steps); $i++) { ?>
+        <tr>
+            <td><?php echo $steps[$i]; ?></td>
+            <td>
+                <?php if ($i < $current_step) { ?>
+                    <span class="badge completed">Completed</span>
+                <?php } else { ?>
+                    <span class="badge pending">Pending</span>
+                <?php } ?>
+            </td>
+        </tr>
+        <?php } ?>
+    </table>
+
+    <a href="my_purchases.php" class="back-btn">← Back to Purchases</a>
+
 </div>
 
-<h3 style="margin-top:20px;">Order Status</h3>
-
-<div class="timeline">
-<?php for ($i = 0; $i < count($steps); $i++) { ?>
-    
-    <div class="step <?php echo ($i < $current_step) ? 'active' : ''; ?>">
-        <div class="circle"></div>
-        <div class="content">
-            <h4><?php echo ($i+1) . ". " . $steps[$i]; ?></h4>
-            <p>
-                <?php
-                if ($i < $current_step) {
-                    echo "Completed";
-                } else {
-                    echo "Pending";
-                }
-                ?>
-            </p>
-        </div>
-    </div>
-
-<?php } ?>
-</div>
-
-</body>
 </html>

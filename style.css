@@ -104,3 +104,22 @@ body {
     margin: 0;
     font-size: 12px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cart-icon {
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}

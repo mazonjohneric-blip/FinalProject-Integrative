@@ -8,6 +8,8 @@ JOIN products pr ON p.product_id = pr.id
 ");
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>

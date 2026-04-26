@@ -137,10 +137,10 @@ function toggleMenu() {
 </script>
 </div>
   <!-- Cart -->
-  <div class="cart-container">
+  
 
   <!-- Cart Icon -->
-  <div class="cart-icon" onclick="toggleCart()">
+ <a href="cart.php" class="cart-icon">🛒</a>
     🛒
   </div>
 
