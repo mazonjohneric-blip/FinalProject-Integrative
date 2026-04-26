@@ -27,10 +27,7 @@ if (isset($_GET['remove'])) {
     header("Location: user.php");
 }
 
-// Buy
-if (isset($_GET['buy'])) {
-    echo "<script>alert('Product Purchased!');</script>";
-}
+
 ?>
 
 <div class="navbar">
@@ -52,7 +49,7 @@ if (isset($_GET['buy'])) {
 
             <ul id="menu" class="hidden">
                 <li><a href="about.php">About</a></li>
-                <li><a href="mypurchases.php">Purchases</a></li>
+                <li><a href="my_purchases.php">Purchases</a></li>
             </ul>
         </div>
 
@@ -384,9 +381,11 @@ if (!empty($row['image']) && file_exists($imagePath)) {
         <h3><?php echo $row['product_name']; ?></h3>
         <p>₱<?php echo $row['price']; ?></p>
 
-        <a href="?buy=<?php echo $row['id']; ?>">
-            <button class="buy">Buy</button>
-        </a>
+    
+        <form method="POST" action="buy.php">
+    <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+    <button type="submit">Buy</button>
+</form>
 
         <a href="?add=<?php echo $row['id']; ?>">
             <button class="cart-btn">Add to Cart</button>
