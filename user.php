@@ -37,10 +37,15 @@ if (isset($_GET['buy'])) {
   <h1 class="logo">MyShop</h1>
 
   <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">Pricing</a>
-  </div>
+    <a href="user.php">Home</a>
+    <a href="about.php">About</a>
+    <a href="transaction.php">Transaction Process</a>
+</div>
+<form action="search.php" method="GET">
+    <input type="text" name="query" placeholder="Search item...">
+    <button type="submit">Search</button>
+</form>
+
 
   <!-- Cart -->
   <div class="cart-container">
