@@ -45,12 +45,12 @@
         <h1>Choose Registration Type</h1>
 
         <!-- REGISTER ADMIN BUTTON -->
-        <form action="register_admin.php" method="GET">
+        <form action="admin_register.php" method="GET">
             <button class="admin-btn">Register Admin</button>
         </form>
 
         <!-- REGISTER USER BUTTON -->
-        <form action="register_user.php" method="GET">
+        <form action="user_register.php" method="GET">
             <button class="user-btn">Register User</button>
         </form>
     </div>
