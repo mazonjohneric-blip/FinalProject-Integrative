@@ -15,12 +15,21 @@ JOIN products pr ON p.product_id = pr.id
 <head>
     <title>My Purchases</title>
 
+     
+
     <style>
         body {
             font-family: Arial;
             background: #0f172a;
             color: white;
         }
+
+        a {
+            text-align: right;
+            color: #f8f8f8;
+            font-size: 30px;
+        }
+
 
         h2 {
             text-align: center;
