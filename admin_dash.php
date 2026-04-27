@@ -6,9 +6,7 @@
 </head>
 <body>
 
- <div class="nav-links">
-    <a href="reg.php">Log out</a>
-</div>
+
 <div class="container py-5">
 
     <!-- TITLE -->
@@ -57,6 +55,53 @@
         </div>
     </div>
 
+</div>
+
+<style>
+/* NAVBAR STYLE */
+.navbar {
+    width: 100%;
+    background-color: #111827;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar h2 {
+    color: white;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #374151;
+}
+
+/* para hindi matakpan content */
+body {
+    padding-top: 70px;
+}
+</style>
+
+<div class="navbar">
+    <h2>Admin Panel</h2>
+    <div class="nav-links">
+        <a href="admin_dash.php">Dashboard</a>
+        <a href="admin_login.php" style="background-color:#ef4444;">Logout</a>
+    </div>
 </div>
 
 <!-- CLEAN BACKGROUND -->

@@ -59,6 +59,22 @@ JOIN products pr ON p.product_id = pr.id
 
 <h2>My Purchases</h2>
 
+<a href="user.php">
+    <button style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        background-color: #f1eaea;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    ">
+        Home
+    </button>
+</a>
+
 <div class="container">
 
 <?php while($row = mysqli_fetch_assoc($result)) { ?>
