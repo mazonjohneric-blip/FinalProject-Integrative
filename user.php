@@ -50,6 +50,7 @@ if (isset($_GET['remove'])) {
             <ul id="menu" class="hidden">
                 <li><a href="about.php">About</a></li>
                 <li><a href="my_purchases.php">Purchases</a></li>
+                 <li><a href="reg.php">Log Out</a></li>
             </ul>
         </div>
 
@@ -157,7 +158,7 @@ function toggleMenu() {
             $res = mysqli_query($conn, "SELECT * FROM products WHERE id=$id");
             $product = mysqli_fetch_assoc($res);
 
-            $subtotal = $product['price'] * $qty;
+            $total += $item['price'] * $item['quantity'];
             $total += $subtotal;
     ?>
             <p>

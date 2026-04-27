@@ -4,10 +4,10 @@
     <title>Product Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
+
  <div class="nav-links">
-    <a href="user.php">✌️</a>
+    <a href="reg.php">Log out</a>
 </div>
 <div class="container py-5">
 

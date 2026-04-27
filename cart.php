@@ -23,26 +23,30 @@ if (isset($_GET['remove'])) {
 }
 
 // CHECKOUT PER ITEM
-if (isset($_GET['checkout'])) {
-    $id = (int)$_GET['checkout'];
+if (isset($_POST['checkout'])) {
 
-    if (isset($_SESSION['cart'][$id])) {
+    $index = $_POST['index'];
+    $item = $_SESSION['cart'][$index];
 
-        $qty = $_SESSION['cart'][$id];
+    $user_id = $_SESSION['user_id'];
 
-        // ADD TO PURCHASES (IMPORTANT)
-        if (isset($_SESSION['purchases'][$id])) {
-            $_SESSION['purchases'][$id] += $qty;
-        } else {
-            $_SESSION['purchases'][$id] = $qty;
-        }
+    $product_id = $item['product_id'];
+    $product_name = $item['product_name'];
+    $price = $item['price'];
+    $quantity = $item['quantity'];
 
-        // REMOVE FROM CART
-        unset($_SESSION['cart'][$id]);
-    }
+    $total = $price * $quantity;
 
-    header("Location: cart.php");
-    exit();
+    mysqli_query($conn, "INSERT INTO purchases 
+    (user_id, product_id, product_name, price, quantity, total_amount)
+    VALUES 
+    ('$user_id','$product_id','$product_name','$price','$quantity','$total')");
+
+    // REMOVE SA CART
+    unset($_SESSION['cart'][$index]);
+    $_SESSION['cart'] = array_values($_SESSION['cart']);
+
+    header("Location: my_purchases.php");
 }
 ?>
 
@@ -94,6 +98,11 @@ if (empty($_SESSION['cart'])) {
 
         if (!$row) continue;
 ?>
+
+<form method="POST">
+    <input type="hidden" name="index" value="<?php echo $index; ?>">
+    <button name="checkout">Checkout</button>
+</form>
 
     <div class="item">
         <h3><?php echo $row['product_name']; ?></h3>
